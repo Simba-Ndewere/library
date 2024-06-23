@@ -21,3 +21,9 @@ function displayBooks(){
         console.log(myLibrary[a]);
     }
 }
+
+function check() {
+    const buttonConst = document.querySelector(".button");
+    //buttonConst.style.display = "none";
+    console.log("button removed");
+}

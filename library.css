@@ -1,9 +1,16 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
 .container {
     display: grid;
     height:100vh;
     grid-template-columns: 2fr 8fr;
     grid-template-rows: 1fr 9fr;
-    grid-template-areas: "top top"
+    grid-template-areas: "left top"
     "left right"
     ;
 }
@@ -11,14 +18,56 @@
 .left {
     grid-area: left;
     background-color: #40bcd8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: inline-flex;
+    height: 50px;
+    padding: 0;
+    background: #009578;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    font: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #008168;
+}
+
+.button:active{
+    background: #006e58;
+}
+
+.buttonText,
+.buttonIcon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    color: white;
+    height: 100%;
+    font-size: 24px;
+}
+
+.buttonIcon {
+    font-size: 1.5em;
+    background: rgba(0,0,0,0.08);
 }
 
 .top {
     grid-area: top;
-    background-color: green;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .right {
