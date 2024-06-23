@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    height:100vh;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas: "top top"
+    "left right"
+    ;
+}
+
+.left {
+    grid-area: left;
+    background-color: #40bcd8;
+}
+
+.top {
+    grid-area: top;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    grid-area: right;
+    background-color: white;
+}
