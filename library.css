@@ -34,12 +34,6 @@ img {
     height: 20px;
 }
 
-.formContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .modal {
     width: 300px;
     background-color: white;
@@ -68,6 +62,10 @@ img {
     border: 1px solid silver;
     margin: 10px 0 18px 0;
     padding: 0 10px;
+}
+
+.modal form .form-control[type="checkbox"]{
+    margin-right: auto;
 }
 
 .modal form .btn{
@@ -134,7 +132,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .top h1 {
