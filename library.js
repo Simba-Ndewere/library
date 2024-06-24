@@ -1,28 +1,29 @@
 const myLibrary = [];
 
-function Book(title, author, pages,read){
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
 }
 
-function addBookToLibrary(book){
+function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-function createBook(title, author, pages,read){
-    const book = new Book(title,author,pages,read);
+function createBook(title, author, pages, read) {
+    const book = new Book(title, author, pages, read);
     addBookToLibrary(book);
 }
 
-function displayBooks(){
-    for(let a = 0; a < myLibrary.length; a++){
+function displayBooks() {
+    for (let a = 0; a < myLibrary.length; a++) {
         console.log(myLibrary[a]);
     }
 }
 
 function addBookButton() {
+
     const buttonConst = document.querySelector(".button");
     const left = document.querySelector(".left");
     buttonConst.style.display = "none";
@@ -32,14 +33,13 @@ function addBookButton() {
     modal.classList.add("modal");
 
     const form = document.createElement("form");
-    form.setAttribute("action","");
+    form.setAttribute("action", "");
+    form.setAttribute("id", "custom-form");
     const h1 = document.createElement("h1");
     h1.textContent = "book details"
-    
     form.classList.add("form");
-
     h1.classList.add("h1");
-            
+
     const formGroup = document.createElement("div");
     const authorLabel = document.createElement("label")
     authorLabel.textContent = "author";
@@ -47,8 +47,9 @@ function addBookButton() {
     formGroup.appendChild(authorLabel);
 
     const authorInput = document.createElement("input");
-    authorInput.setAttribute("type","text");
-    authorInput.setAttribute("required","");
+    authorInput.setAttribute("type", "text");
+    authorInput.setAttribute("required", "");
+    authorInput.setAttribute("name", "author");
     authorInput.classList.add("form-control");
     formGroup.appendChild(authorInput);
 
@@ -59,8 +60,9 @@ function addBookButton() {
     formGroup2.appendChild(titleLabel);
 
     const titleInput = document.createElement("input");
-    titleInput.setAttribute("type","text");
-    titleInput.setAttribute("required","");
+    titleInput.setAttribute("type", "text");
+    titleInput.setAttribute("required", "");
+    titleInput.setAttribute("name", "title");
     titleInput.classList.add("form-control");
     formGroup2.appendChild(titleInput);
 
@@ -71,8 +73,10 @@ function addBookButton() {
     formGroup3.appendChild(pagesLabel);
 
     const pagesInput = document.createElement("input");
-    pagesInput.setAttribute("type","number");
-    pagesInput.setAttribute("required","");
+    pagesInput.setAttribute("type", "number");
+    pagesInput.setAttribute("required", "");
+    pagesInput.setAttribute("name", "pages");
+    pagesInput.setAttribute("min", "1");
     pagesInput.classList.add("form-control");
     formGroup3.appendChild(pagesInput);
 
@@ -82,15 +86,17 @@ function addBookButton() {
     readLabel.setAttribute("for", "");
     formGroup4.appendChild(readLabel);
 
+
     const readInput = document.createElement("input");
-    readInput.setAttribute("type","checkbox");
-    readInput.setAttribute("required","");
+    readInput.setAttribute("type", "checkbox");
     readInput.classList.add("form-control");
+    readInput.setAttribute("name", "read");
+    readInput.setAttribute("id", "readCheckBox");
     formGroup4.appendChild(readInput);
 
     const enterButton = document.createElement("button");
     enterButton.textContent = "Enter";
-    enterButton.setAttribute("type","submit");
+    enterButton.setAttribute("type", "submit");
     enterButton.classList.add("btn");
 
     form.appendChild(h1);
@@ -102,4 +108,18 @@ function addBookButton() {
 
     modal.appendChild(form);
     left.appendChild(modal);
+    const checkBox = document.getElementById("readCheckBox");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        let data = new FormData(e.target);
+        const author = data.get("author");
+        const title = data.get("title");
+        const pages = data.get("pages");
+        const read = checkBox.checked
+
+        createBook(title, author, pages, read);
+        displayBooks();
+    });
 }

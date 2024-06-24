@@ -62,10 +62,17 @@ img {
     border: 1px solid silver;
     margin: 10px 0 18px 0;
     padding: 0 10px;
+    outline: none;
 }
 
+
+
 .modal form .form-control[type="checkbox"]{
-    margin-right: auto;
+    margin-left: 0;
+}
+
+input.form-control:focus {
+    outline: none !important;
 }
 
 .modal form .btn{
