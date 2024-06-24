@@ -11,8 +11,7 @@ html, body {
     grid-template-columns: 2fr 8fr;
     grid-template-rows: 1fr 9fr;
     grid-template-areas: "left top"
-    "left right"
-    ;
+    "left right";
 }
 
 .left {
@@ -21,6 +20,74 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#isPublished {
+    width: 20px;
+    height: 20px;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 300px;
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 20px 30px rgb(0 0 0 / 0.25);
+}
+
+.modal form{
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.modal h1{
+    text-align: center;
+    margin-bottom: 24px;
+    color: #222;
+    font-weight: 500;
+    font-size: 38px;
+}
+
+.modal form .form-control{
+    width: 90%;
+    height: 40px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid silver;
+    margin: 10px 0 18px 0;
+    padding: 0 10px;
+}
+
+.modal form .btn{
+    margin-left: 25%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 34px;
+    border: none;
+    outline: none;
+    background: lightgray;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    border-radius: 4px;
+    transition: .3s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.modal form .btn:hover{
+    opacity: .7;
 }
 
 .button {
@@ -67,10 +134,17 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+
+.top h1 {
     font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 38px;
 }
 
 .right {
     grid-area: right;
     background-color: white;
 }
+
