@@ -40,7 +40,7 @@ function createCard(book) {
     const cardAuthor = document.createElement("div");
     cardAuthor.textContent = book.author;
     const cardPages = document.createElement("div");
-    cardPages.textContent = book.pages + "pages";
+    cardPages.textContent = book.pages + " " + "pages";
 
     const checkBoxRead = document.createElement("div");
     checkBoxRead.classList.add("checkBox-Read");
