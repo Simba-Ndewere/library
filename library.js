@@ -1,14 +1,17 @@
-const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
-//const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
-const book1 = {title: "The Hobbit", author: "J.R.R Tolkien", pages: 311, read: true};
+const myLibrary = [];
+
+const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
+//const book1 = {title: "The Hobbit", author: "J.R.R Tolkien", pages: 311, read: true};
 const book2 = new Book("Two Weeks In November", "Douglas Rogers", 241, false);
 
 function addBookToLibrary(book) {
