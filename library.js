@@ -7,7 +7,8 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
+//const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
+const book1 = {title: "The Hobbit", author: "J.R.R Tolkien", pages: 311, read: true};
 const book2 = new Book("Two Weeks In November", "Douglas Rogers", 241, false);
 
 function addBookToLibrary(book) {
